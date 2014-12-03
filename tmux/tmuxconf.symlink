@@ -1,0 +1,11 @@
+source /usr/local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline_tmux_1.8.conf
+set -g utf8
+set-window-option -g utf8 on
+set -g default-terminal "screen-256color"
+set -g prefix C-j
+unbind C-b
+set-option -g default-shell /bin/zsh
+set -g default-terminal "screen-256color"
+set -g history-limit 10000
+
+
