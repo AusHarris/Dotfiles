@@ -1,0 +1,46 @@
+#PHP Snippets
+snippet php "open tag" b
+<?php $1 ?>
+endsnippet
+
+snippet if "conditional" b
+if (${1:// condition}) {
+	${2:// code}
+} else {
+	${3:// code}
+}
+endsnippet
+
+# Wordpess Snippets
+
+# Header Functions
+snippet info "bloginfo" b
+<?php bloginfo('name'); ?>$0
+endsnippet
+
+snippet info "stylesheet url" b
+<?php bloginfo('stylesheet_url'); ?>$0
+endsnippet
+
+snippet info "version" b
+<?php bloginfo('version'); ?>$0
+endsnippet
+
+snippet info "charset" b
+<?php bloginfo('charset'); ?>$0
+endsnippet
+
+snippet info "url" b
+<?php bloginfo('url'); ?>$0
+endsnippet
+
+snippet info "description" b
+<?php bloginfo('description'); ?>$0
+endsnippet
+
+snippet url "site url" b
+<?php site_url(); ?>$0
+endsnippet
+
+# Footer Functions
+

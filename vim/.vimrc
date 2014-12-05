@@ -5,6 +5,11 @@ filetype plugin indent on
 syntax on
 source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim
 
+for file in split(glob('~/dotfiles/vim/bundle/settings/*/*.vim'), '\n')
+    execute 'source' file
+endfor
+
+
 set nocompatible
 set laststatus=2
 set encoding=utf8
