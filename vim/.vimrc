@@ -1,7 +1,6 @@
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
-
 syntax on
 source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim
 
@@ -9,11 +8,11 @@ for file in split(glob('~/dotfiles/vim/bundle/settings/*/*.vim'), '\n')
     execute 'source' file
 endfor
 
-
+set history=1000
 set nocompatible
 set laststatus=2
 set encoding=utf8
-set so=7
+set so=8
 set history=700
 set expandtab
 set tabstop=4
@@ -41,19 +40,31 @@ set mat=2
 set noerrorbells
 set novisualbell
 set autoindent
-set cursorline
 set smartindent
 set wrap
 set backspace=eol,start,indent
 set lbr
 set tw=500
-
 "auto-save plugin config
+
 let g:auto_save=1
 let g:auto_save_in_insert_mode=1
-
 "ultisnips config
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsEditSplit="vertical"
+
+let g:string = 'string'
+
+python << EOF
+import vim
+def get_Name():
+    print(vim.current.buffer)
+EOF
+    
+
+
+
+
+
 
