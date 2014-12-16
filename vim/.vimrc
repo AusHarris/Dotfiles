@@ -45,26 +45,27 @@ set wrap
 set backspace=eol,start,indent
 set lbr
 set tw=500
+set fillchars+=vert:\ 
 "auto-save plugin config
 
 let g:auto_save=1
 let g:auto_save_in_insert_mode=1
 "ultisnips config
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsEditSplit="vertical"
 
 let g:string = 'string'
 
-python << EOF
-import vim
-def get_Name():
-    print(vim.current.buffer)
-EOF
-    
 
-
-
+nnoremap <Leader>p :call Toggle_php_html()<CR>
+function! Toggle_php_html()
+    if (&ft == 'php')
+        execute 'set filetype=html'
+    else
+        execute 'set filetype=php'
+    endif
+endfunction
 
 
 
