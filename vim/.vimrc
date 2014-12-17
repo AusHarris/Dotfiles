@@ -46,6 +46,9 @@ set backspace=eol,start,indent
 set lbr
 set tw=500
 set fillchars+=vert:\ 
+hi NonText ctermfg=bg
+hi LineNr ctermbg=black
+
 "auto-save plugin config
 
 let g:auto_save=1
