@@ -1,5 +1,4 @@
 # initialize powerline plugin
-source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 
 alias re='source $ZSH/**/*.zsh'
 # shortcut to this dotfiles path is $ZSH
@@ -47,4 +46,9 @@ done
 
 unset config_files
 unset dropbox_files
+
+
+bindkey '^P' up-history
+bindkey '^N' down-history
+bindkey '^r' history-incremental-search
 

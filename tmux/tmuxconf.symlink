@@ -1,4 +1,4 @@
-source /usr/local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline_tmux_1.8.conf
+
 set -g utf8
 set-window-option -g utf8 on
 set -g status-utf8 on
@@ -17,7 +17,7 @@ set -g history-limit 10000
 set -g monitor-activity on
 set -s escape-time 0 # fastest command sequences
 
-# reload configuration
+r reload configuration
 unbind k
 bind r source-file ~/.tmux.conf; display 'tmux configuration source'
 

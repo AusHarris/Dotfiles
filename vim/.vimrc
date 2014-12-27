@@ -1,12 +1,14 @@
 execute pathogen#infect()
-syntax on
 filetype plugin indent on
 syntax on
-source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim
 
 for file in split(glob('~/dotfiles/vim/bundle/settings/*/*.vim'), '\n')
     execute 'source' file
 endfor
+
+
+set background=dark
+colorscheme solarized
 
 set history=1000
 set nocompatible
@@ -46,22 +48,27 @@ set backspace=eol,start,indent
 set lbr
 set tw=500
 set fillchars+=vert:\ 
-hi NonText ctermfg=bg
-hi LineNr ctermbg=black
 
 "auto-save plugin config
-
+"ultisnips settings
 let g:auto_save=1
 let g:auto_save_in_insert_mode=1
-"ultisnips config
+
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsEditSplit="vertical"
 
-let g:string = 'string'
+"lightline
+let g:lightline = {
+            \ 'colorscheme':'solarized',
+            \}
 
+"mappings
+nmap <leader>c ;close<CR>
+nnoremap <leader>e :vsplit ~/dotfiles/vim/.vimrc<CR>
+nnoremap <leader>c :close<CR>
 
-nnoremap <Leader>p :call Toggle_php_html()<CR>
+nnoremap <silent> <Leader>p :call Toggle_php_html()<CR>
 function! Toggle_php_html()
     if (&ft == 'php')
         execute 'set filetype=html'
@@ -69,6 +76,33 @@ function! Toggle_php_html()
         execute 'set filetype=php'
     endif
 endfunction
+
+nnoremap <silent><leader>b :call Reformat_On_Save()<CR>
+function! Reformat_On_Save()
+
+    "save current cursor postion
+    let s:current_cursor_position = 
+
+    "mark current position 
+    let s:save_a_mark = getpos("'a'")
+
+    "reformat code
+    autocmd! BufWritePre *.py execute 'normal gg=G'
+endfunction
+
+" map leader to spacebar 
+let g:mapleader="\<Space>"
+let mapleader="\<Space>"
+
+imap jk <Esc>
+nnoremap ; :
+
+
+
+augroup VIM    
+autocmd! BufWritePost $MYVIMRC source $MYVIMRC
+autocmd! BufWritePost *.vim source %
+augroup END
 
 
 

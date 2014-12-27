@@ -1,0 +1,31 @@
+snippet x "exists_function" b
+if exists("$1")
+$2
+endif
+$0
+endsnippet
+
+snippet let "assignment_variables" b
+let ${1:g:variable} = ${2:value}
+endsnippet
+
+snippet li "list" b
+let ${1:g:variable} = [${2:value}]
+endsnippet
+
+snippet e "echo" b
+echo "$1"
+endsnippet
+
+snippet fm "function_mapping" b
+${3:nnoremap} ${4:<leader>$5} ${6:} :call $1()<CR>
+function! ${1:function}()
+$2
+endfunction
+endsnippet
+
+snippet fu "function" b
+function! ${1:function}()
+$0
+endfunction
+endsnippet
